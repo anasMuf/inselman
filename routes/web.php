@@ -6,6 +6,7 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Purchase\PurchaseController;
 use App\Http\Controllers\Supplier\SupplierController;
+use App\Http\Controllers\Warehouse\WarehouseController;
 use App\Http\Controllers\ProductCategory\ProductCategoryController;
 
 Route::get('/', [HomeController::class, 'main'])->name('home');
@@ -31,6 +32,14 @@ Route::prefix('/supplier')->group(function(){
     Route::get('/formContent', [SupplierController::class, 'formContent'])->name('formContentSupplier');
     Route::post('/save', [SupplierController::class, 'save'])->name('saveSupplier');
     Route::delete('/delete', [SupplierController::class, 'delete'])->name('deleteSupplier');
+});
+
+Route::prefix('/warehouse')->group(function(){
+    Route::get('/', [WarehouseController::class, 'main'])->name('warehouse');
+    Route::get('/getData', [WarehouseController::class, 'getData'])->name('getDataWarehouse');
+    Route::get('/formContent', [WarehouseController::class, 'formContent'])->name('formContentWarehouse');
+    Route::post('/save', [WarehouseController::class, 'save'])->name('saveWarehouse');
+    Route::delete('/delete', [WarehouseController::class, 'delete'])->name('deleteWarehouse');
 });
 
 Route::prefix('/customer')->group(function(){

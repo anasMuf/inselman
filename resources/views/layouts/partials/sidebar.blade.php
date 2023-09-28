@@ -87,6 +87,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('warehouse') }}" class="nav-link">
+                        <i class="nav-icon fas fa-warehouse"></i>
+                        <p>
+                            Gudang
+                            {{-- <span class="right badge badge-danger">New</span> --}}
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item {{-- menu-open --}}">
                     <a href="#" class="nav-link {{-- active --}}">
